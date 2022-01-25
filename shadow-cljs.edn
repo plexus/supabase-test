@@ -4,10 +4,17 @@
  :dev-http
  {8000 "classpath:public"}
 
+ :cache-blockers #{lambdaisland.ornament}
+
  :builds
  {:main
   {:target     :browser
-   :modules    {:main {:entries [{{project}}.core]}}
+   :modules    {:main {:entries [supa.main]}}
    :output-dir "resources/public/ui"
    :asset-path "/ui"
-   :devtools   {:repl-pprint true}}}}
+   :devtools   {:repl-pprint true}
+   :build-hooks [(supa.hooks/write-styles-hook)]
+   :closure-defines
+   {supa.main/supabase-url "https://zmjmdgzsikkpxfyhrvgy.supabase.co"
+    supa.main/supabase-key "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJvbGUiOiJhbm9uIiwiaWF0IjoxNjQyNTQxNTIyLCJleHAiOjE5NTgxMTc1MjJ9.DW0pUquR6G4j9Q-FtNCev_Eyp_gA789twsuN46PYAKM"}
+   }}}
