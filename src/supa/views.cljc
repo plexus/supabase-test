@@ -1,11 +1,6 @@
 (ns supa.views
   (:require [lambdaisland.ornament :as o]))
 
-(o/defstyled main :main
-  :px-4 :py-3
-  :bg-gray-100
-  :min-h-screen)
-
 (o/defstyled group :div
   :bg-gray-200
   :p-2
